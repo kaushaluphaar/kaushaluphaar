@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keychain Details | Kaushal Uphaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/product-styles.css" />
+  <style>
+    .item-hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 5% 2rem;
+      background: var(--color-bg);
+      text-align: center;
+    }
+    .item-image-container {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1;
+      border-radius: 2rem;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .item-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .item-info {
+      max-width: 800px;
+    }
+    .item-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      color: var(--color-accent-gold);
+    }
+    #hero-logo-wrapper.header-active {
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: none;
+      padding: 1.5rem 2rem 0;
+      display: flex;
+      justify-content: center;
+      pointer-events: auto;
+    }
+    #hero-logo-wrapper.header-active a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    #hero-logo-wrapper.header-active #hero-logo {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="hero-logo-wrapper" class="header-active">
+    <a href="/index.html">
+      <h1 id="hero-logo" style="font-size: clamp(2.3rem, 4.8vw, 3.5rem); margin-bottom: 0;">कौशल उपहार</h1>
+    </a>
+  </div>
+
+  <main id="item-content">
+    <section class="item-hero">
+      <div class="item-image-container reveal" style="border: 2px solid rgba(212, 175, 55, 0.3); background: rgba(255,255,255,0.05);">
+        <img id="main-image" src="" alt="Product Image" style="display: block; width: 100%;" />
+      </div>
+      <div class="item-info">
+        <h2 id="product-name" class="item-name reveal">Loading...</h2>
+        <p id="product-desc" class="description-text reveal">Fetching artisan details...</p>
+        <div class="contact-buttons reveal" style="margin-top: 3rem;">
+          <a id="whatsapp-link" href="#" class="gold-btn">Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-content">
+      <div class="artisan-section reveal">
+        <h2>Handcrafted Precision</h2>
+        <p class="description-text">Every element in this piece is selected for its texture and hue. We ensure each stitch and pearl is perfectly placed to create a lasting memory.</p>
+      </div>
+
+      <div class="artisan-section reveal">
+        <h2>Interactive 3D Preview</h2>
+        <p class="description-text">Explore the golden craftsmanship from every angle in this real-time 3D model.</p>
+        <div id="gallery-3d-container" style="width: 100%; height: 500px; margin-top: 2rem; background: rgba(0,0,0,0.1); border-radius: 20px;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="artisan-quote reveal">
+        <h2>Kaushal Uphaar</h2>
+        <p>Elevating everyday gifts into artistic treasures.</p>
+      </div>
+      <p class="made-by">Made with ❤️ by <a href="https://growziq.in" target="_blank" rel="noopener">Growziq</a></p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import ProductGallery3D from './src/ProductGallery3D.js';
+
+    // Parse URL params
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'Artisan Keychain';
+    const desc = params.get('desc') || 'A beautiful handcrafted creation.';
+    const img = params.get('img') || 'IMG_20260407_134146.webp';
+
+    document.getElementById('product-name').innerText = name;
+    document.getElementById('product-desc').innerText = desc;
+    document.getElementById('main-image').src = `/product_images/${img}`;
+    const orderMessage = encodeURIComponent(`I'd like to order the ${name}`);
+    document.getElementById('whatsapp-link').href = `https://wa.me/917888622476?text=${orderMessage}`;
+
+    // Initialize 3D Gallery
+    new ProductGallery3D('gallery-3d-container', 'keychain');
+
+    // Reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

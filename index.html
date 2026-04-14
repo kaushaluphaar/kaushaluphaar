@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaushal Uphaar | Handcrafted Gifts with Love</title>
+  <meta name="description" content="Premium handmade gifting items — keychains, scrapbooks, and photo frames crafted with love by Kaushal Uphaar." />
+  <meta property="og:title" content="Kaushal Uphaar — Handcrafted Gifts with Love" />
+  <meta property="og:description" content="Premium handmade gifting items — keychains, scrapbooks, and photo frames crafted with love." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kaushal Uphaar — Handcrafted Gifts with Love" />
+  <meta name="twitter:description" content="Premium handmade gifting items crafted with love." />
+  <link rel="icon" type="image/webp" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <a href="#scroll-container" class="skip-link">Skip to main content</a>
+  <!-- WebGL Canvas — fixed behind everything -->
+  <canvas id="webgl"></canvas>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"><div id="scroll-progress-bar"></div></div>
+
+  <!-- Fixed Navigation Dots -->
+  <nav id="nav-dots" aria-label="Section navigation">
+    <button class="nav-dot active" data-section="0" aria-label="Hero section" aria-current="true"></button>
+    <button class="nav-dot" data-section="1" aria-label="Products section" tabindex="-1"></button>
+    <button class="nav-dot" data-section="2" aria-label="Story section" tabindex="-1"></button>
+    <button class="nav-dot" data-section="3" aria-label="Contact section" tabindex="-1"></button>
+  </nav>
+
+  <!-- Scrollable Content Layer -->
+  <main id="scroll-container">
+    <!-- SECTION 0: Hero / Brand Intro -->
+    <section id="hero" class="scroll-section" data-section="0">
+      <div class="hero-logo-wrapper" id="hero-logo-wrapper">
+        <h1 id="hero-logo" class="hero-title" style="font-family: 'Noto Serif Devanagari', var(--font-display);">कौशल उपहार</h1>
+        <p class="hero-subtitle">premium handcrafted gifts made with love for you</p>
+      </div>
+      <div class="scroll-hint" id="scroll-hint" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+        <span>Scroll to explore</span>
+        <div class="scroll-hint-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Products Showcase -->
+    <section id="products" class="scroll-section" data-section="1">
+      <div class="section-content products-carousel-container">
+        <div class="section-header">
+          <span class="section-label">Our Creations</span>
+          <h2>Handcrafted with Heart</h2>
+          <p class="section-desc">Each piece is a unique expression of love, designed to turn moments into lasting memories.</p>
+        </div>
+
+        <div class="products-slider-wrapper">
+          <button class="carousel-nav prev" id="carousel-prev" aria-label="Previous product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          
+          <div class="products-cards" id="products-slider">
+            <!-- Product 1: The only one currently available -->
+            <div class="product-card" id="product-keychain">
+              <div class="product-image-wrapper">
+                <img src="/assets/keychain.webp" alt="Handmade Keychain" loading="lazy" />
+              </div>
+              <h3>Keychains</h3>
+              <p>Personalized resin & metal keychains — tiny tokens of big emotions.</p>
+              <a href="/keychain.html" class="view-product-btn">View Gallery</a>
+            </div>
+            <!-- Product 2 (Coming Soon) -->
+            <div class="product-card coming-soon" id="product-scrapbook">
+              <div class="product-image-wrapper">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <img src="/assets/scrapbook.webp" alt="Handmade Scrapbook" loading="lazy" />
+              </div>
+              <h3>Scrapbooks</h3>
+              <p>Hand-decorated memory books that tell your story beautifully.</p>
+              <a href="#" class="view-product-btn">Coming Soon</a>
+            </div>
+            <!-- Product 3 (Coming Soon) -->
+            <div class="product-card coming-soon" id="product-photoframe">
+              <div class="product-image-wrapper">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <img src="/assets/photoframe.webp" alt="Handmade Photo Frame" loading="lazy" />
+              </div>
+              <h3>Photo Frames</h3>
+              <p>Artisan wooden frames that make your photos feel like art.</p>
+              <a href="#" class="view-product-btn">Coming Soon</a>
+            </div>
+            <!-- Product 4: NEW (Coming Soon) -->
+            <div class="product-card coming-soon" id="product-coasters">
+              <div class="product-image-wrapper">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <img src="/assets/keychain.webp" alt="Resin Coasters" loading="lazy" style="filter: grayscale(0.5) opacity(0.7);" />
+              </div>
+              <h3>Resin Coasters</h3>
+              <p>Handcrafted resin coasters with embedded florals and gold leaf.</p>
+              <a href="#" class="view-product-btn">Coming Soon</a>
+            </div>
+            <!-- Product 5: NEW (Coming Soon) -->
+            <div class="product-card coming-soon" id="product-mugs">
+              <div class="product-image-wrapper">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <img src="/assets/scrapbook.webp" alt="Hand-painted Mugs" loading="lazy" style="filter: grayscale(0.5) opacity(0.7);" />
+              </div>
+              <h3>Artisan Mugs</h3>
+              <p>Unique hand-painted ceramic mugs with traditional motifs.</p>
+              <a href="#" class="view-product-btn">Coming Soon</a>
+            </div>
+            <!-- Product 6: NEW (Coming Soon) -->
+            <div class="product-card coming-soon" id="product-wallart">
+              <div class="product-image-wrapper">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <img src="/assets/photoframe.webp" alt="Custom Wall Art" loading="lazy" style="filter: grayscale(0.5) opacity(0.7);" />
+              </div>
+              <h3>Custom Wall Art</h3>
+              <p>Personalized mixed media art pieces for your home decor.</p>
+              <a href="#" class="view-product-btn">Coming Soon</a>
+            </div>
+          </div>
+
+          <button class="carousel-nav next" id="carousel-next" aria-label="Next product">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Crafting / Story -->
+    <section id="story" class="scroll-section" data-section="2">
+      <div class="section-content story-layout">
+        <div class="story-text">
+          <span class="section-label">Our Story</span>
+          <h2>Born from a Love<br/>for Handmade Art</h2>
+          <p>Kaushal Uphaar started as a simple dream — to create gifts that carry genuine warmth and personal meaning. Every keychain, scrapbook, and photo frame is meticulously handcrafted, blending traditional Indian artistry with modern aesthetics.</p>
+          <p>We believe that the best gifts aren't bought — they're made. Each product carries hours of careful attention, from selecting the finest materials to adding the finishing touches that make it uniquely yours.</p>
+          <div class="story-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Gifts Crafted</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">200+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Handmade</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-visual">
+          <div class="story-image-frame">
+            <img src="/assets/scrapbook_cover.webp" alt="Crafting Process" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Contact / CTA -->
+    <section id="contact" class="scroll-section" data-section="3">
+      <div class="section-content contact-layout">
+        <div class="contact-text">
+          <h2>Let's Create Something<br/>Beautiful Together</h2>
+          <p>Ready to order a personalized gift? Reach out to us on WhatsApp, Instagram or Email and let's bring your vision to life.</p>
+          <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.95rem;">— Mannat Verma, Founder</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="https://wa.me/917888622476" target="_blank" rel="noopener" class="cta-btn cta-whatsapp" id="cta-whatsapp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a href="https://instagram.com/kaushal_uphaar" target="_blank" rel="noopener" class="cta-btn cta-instagram" id="cta-instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Follow on Instagram
+          </a>
+          <a href="mailto:Kaushaluphaar@gmail.com" target="_blank" rel="noopener" class="cta-btn cta-email" id="cta-email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Email Us
+          </a>
+        </div>
+        <div class="contact-footer">
+          <p>&copy; 2026 Kaushal Uphaar. All rights reserved.</p>
+          <p class="made-by">Made with ❤️ by <a href="https://growziq.in" target="_blank" rel="noopener">Growziq</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

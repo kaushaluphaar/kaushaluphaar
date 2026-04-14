@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F4C776;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&amp;display=swap');
+      .logo-text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-style: italic;
+        fill: url(#goldGradient);
+      }
+      .hindi-text {
+        font-family: 'Arial', sans-serif;
+        font-weight: 900;
+        fill: url(#goldGradient);
+      }
+    </style>
+  </defs>
+  <!-- Hindi Text Re-creation -->
+  <text x="50%" y="100" text-anchor="middle" font-size="80" class="hindi-text">कौशल उपहार</text>
+  <!-- English Subtitle if needed, or just the main brand -->
+  <text x="50%" y="160" text-anchor="middle" font-size="30" class="logo-text">Premium Artisan Gifts</text>
+</svg>

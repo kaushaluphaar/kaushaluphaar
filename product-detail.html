@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — Kaushal Uphaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #8B1A1A;
+      --color-text: #FFFFFF;
+      --color-accent: #F4C776;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 600px;
+    }
+    .back-btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .back-btn:hover {
+      background: #fff;
+      color: var(--color-bg);
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="/assets/logo.webp" alt="Kaushal Uphaar" class="logo">
+  <h1 id="product-title">Product Details</h1>
+  <p id="product-desc">We are currently perfecting the details of this handcrafted item. Full details, pricing, and personalized options will be available very soon.</p>
+  <a href="/" class="back-btn">Back to Home</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const title = document.getElementById('product-title');
+    
+    if (productId) {
+      const formattedTitle = productId.charAt(0).toUpperCase() + productId.slice(1).replace('-', ' ');
+      title.textContent = formattedTitle;
+    }
+  </script>
+</body>
+</html>

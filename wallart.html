@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Wall Art — Kaushal Uphaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/product-styles.css">
+</head>
+<body>
+  <header class="product-header">
+    <a href="/" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+      Back to Gallery
+    </a>
+  </header>
+
+  <main>
+    <section class="product-hero">
+      <img src="/assets/photoframe.webp" alt="Custom Wall Art - Coming Soon" class="reveal" loading="lazy" style="filter: grayscale(0.5) opacity(0.7);">
+      <h1 class="product-title reveal">Custom Wall Art</h1>
+      <p class="reveal">Coming Soon — Statement pieces for your home.</p>
+    </section>
+
+    <section class="product-content">
+      <div class="artisan-section reveal">
+        <h2>Statement Decor</h2>
+        <p class="description-text">Our wall art collection will combine relief sculpture, gold foiling, and traditional Indian painting techniques.</p>
+      </div>
+
+      <div class="artisan-section reveal">
+        <h2>Interactive Inspection</h2>
+        <p class="description-text">Inspect the intricate relief work and gold foiling details in this interactive 3D preview.</p>
+        <div id="gallery-3d-container" style="width: 100%; height: 500px; margin-top: 2rem; background: rgba(0,0,0,0.1); border-radius: 20px;"></div>
+      </div>
+
+      <div class="artisan-section reveal">
+        <h2>Limited Edition</h2>
+        <p class="description-text">Each piece will be a limited artisan creation. Stay tuned for our exclusive first drop.</p>
+      </div>
+    </section>
+
+    <section class="order-section reveal">
+      <h2 class="product-title" style="font-size: 3rem;">Join the Waitlist</h2>
+      <p style="margin-bottom: 2rem;">Be the first to see our wall art collection.</p>
+      <a href="https://instagram.com/kaushal_uphaar" class="gold-btn">Follow on Instagram</a>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="artisan-quote reveal">
+        <h2>Kaushal Uphaar</h2>
+        <p>Elevating everyday gifts into artistic treasures.</p>
+      </div>
+      <p class="made-by">Made with ❤️ by <a href="https://growziq.in" target="_blank" rel="noopener">Growziq</a></p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import ProductGallery3D from './src/ProductGallery3D.js';
+    new ProductGallery3D('gallery-3d-container', 'wallart');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const heroImg = document.querySelector('.product-hero img');
+      if(heroImg) heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+  </script>
+</body>
+</html>

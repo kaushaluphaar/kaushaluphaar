@@ -1,0 +1,20 @@
+{
+  "name": "kaushal_new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.183.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "vite": "^8.0.8"
+  }
+}

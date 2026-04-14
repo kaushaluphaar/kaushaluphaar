@@ -1,0 +1,199 @@
+/* ============================================
+   KAUSHAL UPHAAR — Product Detail Base Styles
+   Theme: Golden Touch & Deep Red
+   ============================================ */
+:root {
+  --color-bg: #8B1A1A;
+  --color-text: #FFFFFF;
+  --color-accent: #F4C776;
+  --color-gold-gradient: linear-gradient(135deg, #F4C776, #D4AF37, #A67C00);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Header / Back Link */
+.product-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.back-link {
+  pointer-events: auto;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+/* Hero Section */
+.product-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-hero img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.product-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin: 1rem 0;
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+/* Content Sections */
+.product-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.artisan-section {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 2rem;
+  margin-bottom: 4rem;
+}
+
+.artisan-section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.description-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Scroll Animations (Reveal Classes) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Order Footer */
+.order-section {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: rgba(0,0,0,0.2);
+}
+
+.gold-btn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: var(--color-gold-gradient);
+  color: #000;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gold-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(244, 199, 118, 0.4);
+}
+
+.footer-section {
+  padding: 3rem 5%;
+  background: rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.artisan-quote {
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.artisan-quote h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.artisan-quote p {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.made-by {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2rem;
+}
+
+.made-by a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.made-by a:hover {
+  text-decoration: underline;
+}
+
+.footer-section p[style*="margin-bottom"] {
+  margin-bottom: 2rem;
+}
